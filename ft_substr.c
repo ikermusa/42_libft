@@ -14,14 +14,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-char	*ft_substr(const char *cadena, unsigned int inicio, size_t longitud)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*subcadena;
 	size_t	cadlen;
 	size_t	sub_len;
 
-	sub_len = ft_strlen(cadena);
-	if (inicio >= sub_len)
+	sub_len = ft_strlen(s);
+	if (start >= sub_len)
 	{
 		subcadena = (char *)malloc(sizeof(char) * 1);
 		if (!subcadena)
@@ -29,20 +29,20 @@ char	*ft_substr(const char *cadena, unsigned int inicio, size_t longitud)
 		subcadena[0] = '\0';
 		return (subcadena);
 	}
-	if (longitud > sub_len - inicio)
-		longitud =  sub_len - inicio;
-	subcadena = (char *)malloc((longitud + 1) * sizeof(char));
+	if (len > sub_len - start)
+		len = sub_len - start;
+	subcadena = (char *)malloc((len + 1) * sizeof(char));
 	if (!subcadena)
 		return (NULL);
-	while (cadlen < longitud && cadena[inicio + cadlen] != '\0')
+	while (cadlen < len && s[start + cadlen] != '\0')
 	{
-		subcadena[cadlen] = cadena[inicio + cadlen];
+		subcadena[cadlen] = s[start + cadlen];
 		cadlen++;
 	}
 	subcadena[cadlen] = '\0';
 	return (subcadena);
 }
-
+/*
 int main() {
     const char *str = "Hola, mundo!";
     char *sub;
@@ -63,4 +63,4 @@ int main() {
     free(sub);
 
     return 0;
-}
+}*/
