@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imusatad <imusatad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: imusatad <marvin@42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 18:40:41 by imusatad          #+#    #+#             */
 /*   Updated: 2024/09/16 18:40:41 by imusatad         ###   ########.fr       */
