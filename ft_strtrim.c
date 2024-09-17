@@ -32,7 +32,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1 || !set)
 		return (NULL);
 	start = 0;
+	// END EN ESTE CASO ES 18
 	end = ft_strlen(s1);
+	while (s1[start] && ft_is_in_set(s1[start], set))
+		start++;
+	while (end > start && ft_is_in_set(s1[end - 1], set))
+		end--;
+	trimmed_str = (char *)malloc(sizeof(char) * (end - start + 1));
+	if (!trimmed_str)
+		return (NULL);
+	ft_strlcpy(trimmed_str, &s1[start], end - start + 1);
+	return (trimmed_str);
 }
 
 int main(void)
