@@ -32,7 +32,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1 || !set)
 		return (NULL);
 	start = 0;
-	// END EN ESTE CASO ES 18
 	end = ft_strlen(s1);
 	while (s1[start] && ft_is_in_set(s1[start], set))
 		start++;
@@ -44,7 +43,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(trimmed_str, &s1[start], end - start + 1);
 	return (trimmed_str);
 }
-
+/*
 int main(void)
 {
 	char *s1 = "   Hola, mundo!   ";
@@ -62,4 +61,4 @@ int main(void)
 		printf("Error en ft_strtrim.\n");
 	}
 	return (0);
-}
+}*/
