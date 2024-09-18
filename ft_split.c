@@ -15,19 +15,18 @@
 static char	*ft_strcdup(const char *s, const char c)
 {
 	char	*dup;
+	size_t	n;
 	size_t	i;
 
 	i = 0;
-	while (s[i] && s[i] != c)
-		i++;
-	dup = malloc((i + 1) * sizeof(char));
+	n = ft_strlen(s);
+	dup = malloc(n + 1);
 	if (dup == NULL)
 		return (NULL);
-	i = 0;
-	while (s[i] && s[i] != c)
+	while ((i < n) && (s[i] != c))
 	{
 		dup[i] = s[i];
-		i++;
+		i ++;
 	}
 	dup[i] = '\0';
 	return (dup);
@@ -41,18 +40,23 @@ static char	**ft_memory(char const *s, char c)
 
 	con = 0;
 	i = 0;
-	while (s[i])
+	while (s[i] != '\0')
 	{
-		if (s[i] != c && (i == 0 || s[i - 1] == c))
+		if (s[i] == c)
+		{
 			con++;
-		i++;
+			i++;
+		}
 	}
+	con++;
 	split = (char **)malloc((con + 1) * sizeof(char *));
 	if (split == NULL)
+	{
+		free(split);
 		return (NULL);
+	}
 	return (split);
 }
-
 
 char	**ft_split(char const *s, char c)
 {
@@ -81,7 +85,7 @@ char	**ft_split(char const *s, char c)
 	return (split);
 }
 
-
+/*
 int	main(void)
 {
 	char	**result;
@@ -100,3 +104,4 @@ int	main(void)
 	free(result);
 	return (0);
 }
+*/
