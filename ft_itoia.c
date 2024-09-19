@@ -45,8 +45,17 @@ static void	ft_itoia_recursive(int n, char *str, int *index)
 char	*ft_itoia(int n)
 {
 	char	*str;
+	int		len;
+	int		index;
 
-
+	len = ft_num_len(n);
+	str = (char *)malloc((len + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	index = 0;
+	ft_itoia_recursive(n, str, &index);
+	str[index] = '\0';
+	return (str);
 }
 /*
 int	main(void)
@@ -54,7 +63,7 @@ int	main(void)
 	int		num = -12345;
 	char	*str;
 
-	str = ft_itoa(num);
+	str = ft_itoia(num);
 	if (str)
 	{
 		printf("Número como cadena: %s\n", str);
