@@ -17,26 +17,28 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	unsigned int	i;
 
 	if (!s || !f)
-		return (NULL);
-
+		return ;
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
 		f(i, &s[i]);
 		i++;
 	}
 }
 
-void	*f(unsigned int i, char *c)
+void	f(unsigned int i, char *c)
 {
 	if (i % 2 == 0 && *c >= 'a' && *c <= 'z')
 		*c -= 32;
 }
-
 /*
-int main(void)
+int	main(void)
 {
-	char str[] = "Hello, World!";
-	void (*f)(unsigned int, char*) = (void (*)(unsigned int, char*))0x
-	
+	char	str[] = "hello, world!";
+
+	printf("Antes: %s\n", str);
+	ft_striteri(str, f);
+	printf("Después: %s\n", str);
+
+	return (0);
 }*/
