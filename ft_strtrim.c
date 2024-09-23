@@ -47,7 +47,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 int main(void)
 {
 	char *s1 = "   Hola, mundo!   ";
-	char *set = " ";
+	char *set = " Ho";
 	char *trimmed;
 
 	trimmed = ft_strtrim(s1, set);

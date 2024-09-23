@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n,  int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	char	c;
 
@@ -31,7 +31,7 @@ void	ft_putnbr_fd(int n,  int fd)
 	c = (n % 10) + '0';
 	write(fd, &c, 1);
 }
-
+/*
 int	main(void)
 {
 	int fd = open("numbers.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
@@ -46,4 +46,4 @@ int	main(void)
 	close(fd);
 	
 	return (0);
-}
+}*/
