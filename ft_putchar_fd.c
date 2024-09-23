@@ -1,42 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imusatad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 10:33:13 by imusatad          #+#    #+#             */
-/*   Updated: 2024/09/23 10:33:13 by imusatad         ###   ########.fr       */
+/*   Created: 2024/09/23 10:57:55 by imusatad          #+#    #+#             */
+/*   Updated: 2024/09/23 10:57:55 by imusatad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_putchar_fd(char c, int fd)
 {
-	unsigned int	i;
-
-	if (!s || !f)
-		return (NULL);
-
-	i = 0;
-	while(s[i])
-	{
-		f(i, &s[i]);
-		i++;
-	}
-}
-
-void	*f(unsigned int i, char *c)
-{
-	if (i % 2 == 0 && *c >= 'a' && *c <= 'z')
-		*c -= 32;
+	write(fd, &c, 1);
 }
 
 /*
 int main(void)
 {
-	char str[] = "Hello, World!";
-	void (*f)(unsigned int, char*) = (void (*)(unsigned int, char*))0x
-	
+    ft_putchar_fd('A', 1); // Esto escribirá el carácter 'A' en la consola.
+    return (0);
 }*/

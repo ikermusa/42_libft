@@ -16,6 +16,7 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <fcntl.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -35,6 +36,9 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strtrim(const char *s1, const char *set);
 char	**ft_split(const char *s, char c);
+char	*ft_itoa(int n);
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 // Funciones de manipulación de memoria
 void	*ft_memset(void *b, int c, size_t len);
@@ -52,5 +56,11 @@ int		ft_atoi(const char *str);
 // Funciones de manejo de memoria dinámica
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s);
+
+// Funciones de escritura en archivo descriptor
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif
