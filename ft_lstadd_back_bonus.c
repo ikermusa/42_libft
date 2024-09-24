@@ -1,46 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imusatad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/24 12:51:57 by imusatad          #+#    #+#             */
-/*   Updated: 2024/09/24 12:52:06 by imusatad         ###   ########.fr       */
+/*   Created: 2024/09/24 16:02:31 by imusatad          #+#    #+#             */
+/*   Updated: 2024/09/24 16:02:42 by imusatad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	i;
+	t_list	*last;
 
-	i = 0;
-	while (lst)
+	if (!lst || !new)
+		return ;
+	if (lst == NULL)
 	{
-		i++;
-		lst = lst->next;
+		*lst = new;
+		return ;
 	}
-	return (i);
+	last = ft_lstlast(*lst);
+	last->next = new;
 }
-
+/*
 int	main(void)
 {
+	t_list	*head;
 	t_list	*node1;
 	t_list	*node2;
-	t_list	*node3;
-	t_list	*head;
-	int		size;
+	t_list	*new_node;
+	t_list	*current;
 
 	head = ft_lstnew("Nodo 1");
 	node1 = ft_lstnew("Nodo 2");
 	node2 = ft_lstnew("Nodo 3");
-	node3 = ft_lstnew("Nodo 4");
-	ft_lstadd_front(&head, node1);
-	ft_lstadd_front(&head, node2);
-	ft_lstadd_front(&head, node3);
-	size = ft_lstsize(head);
-	printf("El tamaño de la lista es: %d\n", size);
+	new_node = ft_lstnew("Nodo 4");
+
+	ft_lstadd_back(&head, node1);
+	ft_lstadd_back(&head, node2);
+	ft_lstadd_back(&head, new_node);
+
+	current = head;
+	while (current)
+	{
+		printf("Contenido: %s\n", (char *)current->content);
+		current = current->next;
+	}
+
 	return (0);
-}
+}*/
