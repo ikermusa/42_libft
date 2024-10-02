@@ -6,7 +6,7 @@
 /*   By: imusatad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 12:08:42 by imusatad          #+#    #+#             */
-/*   Updated: 2024/09/16 12:08:50 by imusatad         ###   ########.fr       */
+/*   Updated: 2024/10/02 16:53:09 by imusatad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*subcadena;
 	size_t	cadlen;
-	size_t	sub_len;
 
-	sub_len = ft_strlen(s);
-	if (start >= sub_len)
+	cadlen = 0;
+	if (start >= ft_strlen(s))
 	{
 		subcadena = (char *)malloc(sizeof(char) * 1);
 		if (!subcadena)
@@ -27,8 +26,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		subcadena[0] = '\0';
 		return (subcadena);
 	}
-	if (len > sub_len - start)
-		len = sub_len - start;
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
 	subcadena = (char *)malloc((len + 1) * sizeof(char));
 	if (!subcadena)
 		return (NULL);

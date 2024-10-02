@@ -14,10 +14,11 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s++)
+	while (*s)
 	{
 		if (*s == (char)c)
 			return ((char *)s);
+		s++;
 	}
 	if (c == '\0')
 		return ((char *)s);
@@ -25,20 +26,20 @@ char	*ft_strchr(const char *s, int c)
 }
 /*
 int main() {
-    const char *str = "Hola, mundo!";
-    
-    // Buscar la letra 'm'
-    char *result = ft_strchr(str, 'm');
-    if (result) {
-        printf("La letra 'm' se encontró en: %s\n", result);
-    } else {
-        printf("La letra 'm' no se encontró.\n");
-    }
+	const char *str = "Hola, mundo!";
+	
+	// Buscar la letra 'm'
+	char *result = ft_strchr(str, 'm');
+	if (result) {
+		printf("La letra 'm' se encontró en: %s\n", result);
+	} else {
+		printf("La letra 'm' no se encontró.\n");
+	}
 
-    result = ft_strchr(str, '\0');
-    if (result) {
-        printf("El carácter nulo se encontró: %p\n", result);
-    }
+	result = ft_strchr(str, '\0');
+	if (result) {
+		printf("El carácter nulo se encontró: %p\n", result);
+	}
 
-    return 0;
+	return 0;
 }*/
